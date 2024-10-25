@@ -8,11 +8,11 @@
 
     @livewireStyles
 </head>
-<body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100">
+<body class="antialiased">
+    <div class="">
         <livewire:components.navbar />
 
-        <main>
+        <main class="flex flex-col min-h-[85vh] pt-[100px] max-w-7xl mx-auto px-8">
             {{ $slot }}
         </main>
 

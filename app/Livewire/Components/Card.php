@@ -7,14 +7,16 @@ use Livewire\Component;
 class Card extends Component
 {
     public $title;
-    public $content;
     public $imageUrl;
+    public $category;
+    public $price;
 
-    public function mount($title, $content, $imageUrl = null)
+    public function mount($title, $imageUrl = null, $category, $price)
     {
         $this->title = $title;
-        $this->content = $content;
         $this->imageUrl = $imageUrl;
+        $this->category = $category;
+        $this->price = $price;
     }
     public function render()
     {

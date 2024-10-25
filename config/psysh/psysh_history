@@ -1,0 +1,3 @@
+_HiStOrY_V2_
+use\040App\134Models\134Invoice;
+Invoice::get();

@@ -1,14 +1,11 @@
 <?php
 
+use App\Livewire\Page\Cart;
+use App\Livewire\Page\Finish;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Page\Home;
-use App\Livewire\Page\About;
-use App\Livewire\Page\Contact;
-
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware('redirect.if.not.loggedin')->group(function () {
+    Route::get('/' , Home::class)->name('home');
+    Route::get('/cart', Cart::class)->name('cart');
+    Route::get('/finish/{orderId}', Finish::class)->name('finish');
 });
-
-Route::get('/', Home::class)->name('home');
-Route::get('/about', About::class)->name('about');
-Route::get('/contact', Contact::class)->name('contact');

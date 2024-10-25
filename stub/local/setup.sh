@@ -2,7 +2,7 @@ CONTAINER_NAME=$(grep ^CONTAINER_NAME= .env | cut -d '=' -f2 | tr -d '"')
 sed -i "s/^DB_HOST=.*/DB_HOST=$CONTAINER_NAME-pgsql/" .env
 
 CONTAINER_NAME=${CONTAINER_NAME:-starter-project}
-docker compose up -d --build
+docker compose up -d
 
 docker exec $CONTAINER_NAME composer install
 

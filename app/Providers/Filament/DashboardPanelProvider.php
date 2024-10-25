@@ -3,6 +3,9 @@
 namespace App\Providers\Filament;
 
 use App\Filament\Pages\AppSettings;
+use App\Filament\Pages\Auth\Login;
+use App\Http\Responses\LoginResponse;
+use App\Livewire\CustomLogin;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -28,7 +31,8 @@ class DashboardPanelProvider extends PanelProvider
             ->default()
             ->id('dashboard')
             ->path('dashboard')
-            ->login()
+            ->login(CustomLogin::class)
+            // ->loginResponse(LoginResponse::class)
             ->colors([
                 'primary' => Color::Blue,
             ])
@@ -56,8 +60,8 @@ class DashboardPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->brandLogo(fn () => view('vendor.filament-panels.components.logo'))
-            ->favicon(asset('images/logo.webp'))
+            // ->brandLogo(fn () => view('vendor.filament-panels.components.logo'))
+            // ->favicon(asset('images/logo.webp'))
             ->profile(isSimple: false)
             ->plugin(
                 \TomatoPHP\FilamentSettingsHub\FilamentSettingsHubPlugin::make()

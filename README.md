@@ -1,4 +1,4 @@
-# Starter Kit Laravel Filament
+# MAS POS
 
 ## Default Usage (Use XAMPP, MAMPP, etc)
 
